@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+    color: white;
+}
+
+video{
+    position: fixed;
+    z-index: -100;
+    width: 100vw;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    backdrop-filter: brightness(40%);
+    padding: 0 2rem;
+}
+

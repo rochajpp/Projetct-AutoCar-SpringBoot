@@ -1,0 +1,9 @@
+@media (max-width: 480px){
+    .header-container nav{
+        display: none;
+    }
+
+    .home-container h1{
+        font-size: 4rem;
+    }
+}

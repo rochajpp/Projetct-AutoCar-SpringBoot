@@ -1,0 +1,27 @@
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    position: fixed;
+    width: 100vw;
+    z-index: 100;
+}
+
+.header-container nav ul{
+    display: flex;
+    gap: 2rem;
+}
+
+.header-container li{
+    list-style: none;
+    transition: 0.4s;
+}
+
+.header-container a{
+    cursor: pointer;
+}
+
+.header-container li:hover{
+    letter-spacing: 0.2rem;
+}
