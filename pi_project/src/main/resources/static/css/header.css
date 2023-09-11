@@ -1,11 +1,26 @@
 header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 0;
+    
+
     position: fixed;
     width: 100vw;
     z-index: 100;
+    transition: 0.5s;
+}
+
+.scroll-header header{
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid white;
+}
+
+.header-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.header-container img{
+    width: 4rem;
 }
 
 .header-container nav ul{
@@ -18,10 +33,21 @@ header{
     transition: 0.4s;
 }
 
-.header-container a{
+.header-container nav ul a{
     cursor: pointer;
+    text-decoration: none;
+    color: white;
 }
 
 .header-container li:hover{
     letter-spacing: 0.2rem;
+}
+
+.buttons-header{
+    display: flex;
+    gap: 1rem;
+}
+
+.buttons-header button{
+    padding: 0.4rem 1rem;
 }

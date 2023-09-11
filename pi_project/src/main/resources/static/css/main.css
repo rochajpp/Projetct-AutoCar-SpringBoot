@@ -22,6 +22,8 @@ video{
     justify-content: center;
     align-items: center; 
     backdrop-filter: brightness(40%);
-    padding: 0 2rem;
 }
-
+body button{
+    border: 1px solid black;
+    cursor: pointer;
+}
