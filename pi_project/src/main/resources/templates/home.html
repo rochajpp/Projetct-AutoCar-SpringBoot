@@ -13,7 +13,7 @@
     <title>Home | AutoCar</title>
 </head>
 <body>
-    <video src="/img/video2.mp4" autoplay loop muted></video>
+    <img class="background-main" src="/img/background.jpg">
     <header>
         <div class="header-container">
             <a href="/"><img src="/img/icon.png"></a>
@@ -21,14 +21,14 @@
                 <ul>
                     <a href="#"><li>HOME</li></a>
                     <a href="#about"><li>ABOUT</li></a>
-                    <a><li>CARS AVAILABLE</li></a>
-                    <a><li>CONTACTS</li></a>
+                    <a href="#cars"><li>CARS AVAILABLE</li></a>
+                    <a href="#contacts"><li>CONTACTS</li></a>
                 </ul>
             </nav>
             <div class="buttons-header">
                 <a href="/login"><button>Enter</button></a>
-                <a href="/register"><button>Register</button></a>
             </div>
+            <ion-icon class="menu-icon" name="menu-outline"></ion-icon>
         </div>
     </header>
 
@@ -46,6 +46,7 @@
             <div class="about-container">
                 <h1>About</h1>
                 <br>
+                <br>
                 <p>
                     Hello, we are the AutoCar, we provide the best cars
                     at the best prices, register on our website and get start
@@ -54,11 +55,26 @@
                 </p>
                 <br>
                 <br>
-                <a href="register"><button>Start now!</button></a>
+                <a href="#cars"><button>Start now!</button></a>
+            </div>
+        </section>
+
+        <section id="cars">
+            <div class="cars-container">
+
             </div>
         </section>
         
     </div>
+
+    <footer id="contacts">
+        <div class="footer-container">
+            
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <script src="/js/home.js"></script>
 </body>

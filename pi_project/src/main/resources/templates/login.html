@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/mainLogin.css">
+    <link rel="stylesheet" type="text/css" href="/css/mediaLogin.css">
+
+    <link rel="icon" href="/img/icon.png">
+    <title>Login | AutoCar</title>
+</head>
+<body>
+    <div class="main-container">
+        <form action="/checkData" method="POST">
+            <h1>Fill in the fields</h1>
+            <input class="input" type="name" name="login" placeholder="Username">          
+            <input class="input" id="pass" type="password" name="senha" placeholder="Password">
+            <div onclick="showPass()" class="functions-input">
+                <div class="checkbox-func">
+                    <input onclick="showPass()" type="checkbox" id="show-password">
+                    <label>Show password</label>
+                </div>
+                <a href="/recover">Forgot password?</a>
+            </div>
+            
+            <button>Submit</button>
+            <a href="/">Back</a>
+        </form>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

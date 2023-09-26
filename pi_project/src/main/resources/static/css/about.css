@@ -1,12 +1,9 @@
 #about{
-    background: url("/img/backgroundAbout.jpg") center no-repeat;
-    background-size: cover;
-    
+    background-color: rgba(61, 61, 61, 0.776);
 }
 
 .about-container{
-    backdrop-filter: blur(4px);
-    padding: 15rem 2rem;
+    padding: 12rem 2rem;
     text-align: center;
 }
 
@@ -20,4 +17,6 @@
 
 .about-container button{
     padding: 1rem 4rem;
+    color: white;
+    border: 1px solid white;
 }

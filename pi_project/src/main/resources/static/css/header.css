@@ -1,6 +1,4 @@
 header{
-    
-
     position: fixed;
     width: 100vw;
     z-index: 100;
@@ -16,7 +14,12 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
+}
+
+.menu-icon{
+    display: none;
+    font-size: 2rem;
 }
 
 .header-container img{
@@ -43,11 +46,6 @@ header{
     letter-spacing: 0.2rem;
 }
 
-.buttons-header{
-    display: flex;
-    gap: 1rem;
-}
-
 .buttons-header button{
-    padding: 0.4rem 1rem;
+    padding: 0.5rem 2rem;
 }
