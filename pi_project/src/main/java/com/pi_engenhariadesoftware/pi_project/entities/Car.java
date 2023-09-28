@@ -28,12 +28,12 @@ public class Car {
     private String model;
     
 
-    @Column(name = "manufactureYear", columnDefinition = "YEAR", nullable = false)
+    @Column(name = "manufactureyear", columnDefinition = "YEAR", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date manufactureYear;
 
 
-    @Column(name = "modelYear", columnDefinition = "YEAR", nullable = false)
+    @Column(name = "modelyear", columnDefinition = "YEAR", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date modelYear;
 
@@ -42,7 +42,7 @@ public class Car {
     private float value;
 
 
-    @Column(name = "registerDate", nullable = false)
+    @Column(name = "registerdate", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date registerDate;
 
