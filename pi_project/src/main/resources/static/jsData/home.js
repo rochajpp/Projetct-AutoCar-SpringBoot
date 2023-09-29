@@ -14,7 +14,7 @@ fetch(url + "api/car/")
 
             const imgCar = document.createElement("img");
             imgCar.alt = "Imagem";
-            imgCar.src = "/img/background.jpg";
+            imgCar.src = cars[i].image;
 
             const infoCar = document.createElement("div");
             infoCar.classList.add("info-car");

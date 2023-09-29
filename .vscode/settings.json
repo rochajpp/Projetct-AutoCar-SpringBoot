@@ -10,9 +10,10 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "autocar",
+            "name": "AutoCar",
             "database": "autocar",
-            "username": "root"
+            "username": "root",
+            "askForPassword": true
         }
     ]
 }
