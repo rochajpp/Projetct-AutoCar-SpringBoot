@@ -20,7 +20,10 @@ fetch(url + "api/car/")
             infoCar.classList.add("info-car");
 
             const h1 = document.createElement("h1");
-            h1.innerHTML = cars[i].model;
+            h1.innerHTML = cars[i].brand;
+
+            const h2 = document.createElement("h2");
+            h2.innerHTML = cars[i].model;
 
             const br = document.createElement("br");
             const br2 = document.createElement("br");
@@ -33,6 +36,7 @@ fetch(url + "api/car/")
             button.innerHTML = "$ " + cars[i].value;
 
             infoCar.appendChild(h1);
+            infoCar.appendChild(h2);
             infoCar.appendChild(br);
             infoCar.appendChild(p);
             infoCar.appendChild(br2);
