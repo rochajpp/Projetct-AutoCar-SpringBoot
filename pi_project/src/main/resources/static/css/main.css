@@ -19,7 +19,62 @@ body, html{
 .main-container{
     backdrop-filter: brightness(40%);
 }
-body button{
+
+.activePopUp .pop-up{
+    display: flex;
+}
+
+.pop-up{
+    backdrop-filter: blur(10px);
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 10000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    
+}
+
+.pop-up form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+    transition: 0.5s;
+    background-color: rgb(28, 28, 28);
+    width: 40rem;
+    padding: 2rem;
+    border: 1px solid red;
+    border-radius: 1rem;
+}
+
+.input-area{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+form button{
+    padding: 1rem 4rem;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+form button:hover{
+    background-color: rgb(142, 0, 0);
+}
+
+input{
+    padding: 0.5rem;
+}
+
+header button, #about button{
     border: 1px solid white;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.201);
@@ -27,7 +82,7 @@ body button{
     transition: 0.5s;
 }
 
-body button:hover{
+header button:hover, #about button:hover{
     background-color: rgba(255, 255, 255, 0.201);
 }
 

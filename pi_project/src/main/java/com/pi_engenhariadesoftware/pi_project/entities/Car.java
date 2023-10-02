@@ -28,14 +28,12 @@ public class Car {
     private String model;
     
 
-    @Column(name = "manufactureyear", columnDefinition = "YEAR", nullable = false)
-    @Temporal(TemporalType.DATE)
-    private Date manufactureYear;
+    @Column(name = "manufactureyear", nullable = false)
+    private int manufactureYear;
 
 
-    @Column(name = "modelyear", columnDefinition = "YEAR", nullable = false)
-    @Temporal(TemporalType.DATE)
-    private Date modelYear;
+    @Column(name = "modelyear", nullable = false)
+    private int modelYear;
 
 
     @Column(name = "value", nullable = false)
@@ -81,19 +79,19 @@ public class Car {
         this.model = model;
     }
 
-    public Date getManufactureYear() {
+    public int getManufactureYear() {
         return this.manufactureYear;
     }
 
-    public void setManufactureYear(Date manufactureYear) {
+    public void setManufactureYear(int manufactureYear) {
         this.manufactureYear = manufactureYear;
     }
 
-    public Date getModelYear() {
+    public int getModelYear() {
         return this.modelYear;
     }
 
-    public void setModelYear(Date modelYear) {
+    public void setModelYear(int modelYear) {
         this.modelYear = modelYear;
     }
 

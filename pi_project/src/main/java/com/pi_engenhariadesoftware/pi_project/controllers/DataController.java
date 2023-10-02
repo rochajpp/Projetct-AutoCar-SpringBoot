@@ -18,20 +18,34 @@ import com.pi_engenhariadesoftware.pi_project.repositories.UserRepository;
 @RestController
 public class DataController {
     private final CarRepository carRepository;
+    private final UserRepository userRepository;
 
-    @Autowired
-    public DataController(CarRepository carRepository) {
+    public DataController(CarRepository carRepository, UserRepository userRepository) {
         this.carRepository = carRepository;
+        this.userRepository = userRepository;
     }
-    
-    @RequestMapping("/users")
-    public List<Car> getAllUsers(){
-        return carRepository.findAll();
-    }
+
 
     @RequestMapping("/checkData")
-    @ResponseBody
     public void checkData(@RequestParam("login") String login, @RequestParam("password") String pass){
         System.out.println(login);
+        System.out.println(pass);
+    }
+
+    @RequestMapping("/interest")
+    public void interest(@RequestParam("id") Long id, @RequestParam("name") String name, @RequestParam("phone") String phone){
+        
+        // Adicionando true para interresse do carro
+        Car car = carRepository.getReferenceById(id);
+        car.setInterest(true);
+        carRepository.save(car);
+
+       
+       
+       
+
+        //Adicionar dados ao PDF
+        
+
     }
 }
