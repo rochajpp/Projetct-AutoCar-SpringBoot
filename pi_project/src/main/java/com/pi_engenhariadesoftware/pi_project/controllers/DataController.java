@@ -38,14 +38,11 @@ public class DataController {
         // Adicionando true para interresse do carro
         Car car = carRepository.getReferenceById(id);
         car.setInterest(true);
+        car.setNameInterest(name);
+        car.setNumberInterest(phone);
         carRepository.save(car);
 
-       
-       
-       
 
-        //Adicionar dados ao PDF
-        
-
+       
     }
 }
