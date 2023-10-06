@@ -56,11 +56,6 @@ public class Car {
     @Column(name = "interest", nullable = false)
     private Boolean interest;
 
-    @Column(name = "nameinterest", nullable = true)
-    private String nameInterest;
-
-    @Column(name = "numberinterest", nullable = true)
-    private String numberInterest;
 
 
 
@@ -141,20 +136,5 @@ public class Car {
         this.interest = interest;
     }
 
-    public String getNameInterest(){
-        return this.nameInterest;
-    }
-
-    public void setNameInterest(String nameInterest){
-        this.nameInterest = nameInterest;
-    }
-
-    public String getNumberInterest(){
-        return this.numberInterest;
-    }
-
-    public void setNumberInterest(String numberInterest){
-        this.numberInterest = numberInterest;
-    }
     
 }

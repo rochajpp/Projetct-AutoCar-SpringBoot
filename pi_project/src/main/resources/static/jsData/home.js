@@ -6,7 +6,7 @@ fetch(url + "api/car/")
     .then((data) => {
         let cars = data;
         const carElement = document.querySelector(".cars-container");
-
+        console.log(cars);
         for(var i = 0; i < cars.length; i++){
             
             if(!cars[i].interest){

@@ -6,8 +6,8 @@ CREATE TABLE car(
     description VARCHAR(1000) NOT NULL,
     image VARCHAR(1000) NOT NULL,
     interest BOOLEAN NOT NULL,
-    manufactureyear YEAR NOT NULL,
-    modelyear YEAR NOT NULL,
+    manufactureyear INT NOT NULL,
+    modelyear INT NOT NULL,
     registerdate DATE NOT NULL
 );
 
