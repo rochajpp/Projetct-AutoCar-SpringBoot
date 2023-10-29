@@ -1,5 +1,6 @@
 package com.pi_engenhariadesoftware.pi_project.entities;
 import java.sql.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,12 +38,12 @@ public class User {
 
     @Column(name = "birthDate", nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date birthDate;
+    private LocalDate birthDate;
 
 
     @Column(name = "registerDate", nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date registerDate;
+    private LocalDate registerDate;
 
 
 
@@ -83,19 +84,19 @@ public class User {
         this.active = active;
     }
 
-    public Date getBirthDate(){
+    public LocalDate getBirthDate(){
         return this.birthDate;
     }
 
-    public void setBirthDate(Date birthDate){
+    public void setBirthDate(LocalDate birthDate){
         this.birthDate = birthDate;
     }
 
-    public Date getRegisterDate(){
+    public LocalDate getRegisterDate(){
         return this.registerDate;
     }
 
-    public void setRegisterDate(Date registerDate){
+    public void setRegisterDate(LocalDate registerDate){
         this.registerDate = registerDate;
     }
 

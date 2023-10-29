@@ -21,3 +21,12 @@ CREATE TABLE user(
     registerdate DATE NOT NULL
 );
 
+CREATE TABLE report(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    idcar INT NOT NULL,
+    nameclient VARCHAR(100) NOT NULL,
+    phoneclient VARCHAR(20) NOT NULL,
+    registerdate DATE NOT NULL,
+    FOREIGN KEY (idcar) REFERENCES car (id)
+);
+

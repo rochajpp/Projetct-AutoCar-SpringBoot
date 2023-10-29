@@ -1,6 +1,7 @@
 package com.pi_engenhariadesoftware.pi_project.entities;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,7 +43,7 @@ public class Car {
 
     @Column(name = "registerdate", nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date registerDate;
+    private LocalDate registerDate;
 
 
     @Column(name = "description", length = 1000, nullable = false)
@@ -104,11 +105,11 @@ public class Car {
         this.value = value;
     }
 
-    public Date getRegisterDate() {
+    public LocalDate getRegisterDate() {
         return this.registerDate;
     }
 
-    public void setRegisterDate(Date registerDate) {
+    public void setRegisterDate(LocalDate registerDate) {
         this.registerDate = registerDate;
     }
 
