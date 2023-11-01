@@ -33,8 +33,23 @@ public class DataController {
 
     @RequestMapping("/checkData")
     public void checkData(@RequestParam("login") String login, @RequestParam("password") String pass){
-        System.out.println(login);
-        System.out.println(pass);
+        List<User> userList = userRepository.findAll();
+        User user = null;
+
+        for(int i = 0; i < userList.size(); i++){
+            if(userList.get(i).getLogin().equals(login)){
+                if(userList.get(i).getPassword().equals(pass)){
+                    user = userList.get(i);
+                    break;
+                }
+            }
+        }
+
+        if(user != null){
+            System.out.println("Logado com sucesso");
+        }else{
+            System.out.println("Credenciais incorretas");
+        }
     }
 
     @RequestMapping("/interest")

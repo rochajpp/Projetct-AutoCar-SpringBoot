@@ -13,3 +13,9 @@ SHOW TABLES;
 DESCRIBE report;
 
 SELECT * FROM report;
+
+SELECT * FROM user;
+
+DESCRIBE user;
+
+INSERT INTO user (login, password, name, active, birthdate, registerdate) VALUES ("admin", "admin2020", "Admin", 1, "2022-02-02", "2022-02-02");

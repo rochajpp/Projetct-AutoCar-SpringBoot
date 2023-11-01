@@ -36,12 +36,12 @@ public class User {
     private Boolean active;
 
 
-    @Column(name = "birthDate", nullable = false)
+    @Column(name = "birthdate", nullable = false)
     @Temporal(TemporalType.DATE)
     private LocalDate birthDate;
 
 
-    @Column(name = "registerDate", nullable = false)
+    @Column(name = "registerdate", nullable = false)
     @Temporal(TemporalType.DATE)
     private LocalDate registerDate;
 
