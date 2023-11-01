@@ -11,3 +11,5 @@ SELECT * FROM car;
 SHOW TABLES;
 
 DESCRIBE report;
+
+SELECT * FROM report;

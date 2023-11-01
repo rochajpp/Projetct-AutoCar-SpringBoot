@@ -16,7 +16,7 @@ public class Report {
 
     @OneToOne
     @JoinColumn(name = "idcar", nullable = false)
-    private int car;
+    private Car car;
 
     @Column(name = "nameclient", length = 100, nullable = false)
     private String nameClient;
@@ -28,7 +28,7 @@ public class Report {
     @Temporal(TemporalType.DATE)
     private LocalDate registerDate;
 
-    public Report(int car, String nameClient, String phoneClient){
+    public Report(Car car, String nameClient, String phoneClient){
         this.car = car;
         this.nameClient = nameClient;
         this.phoneClient = phoneClient;
@@ -39,7 +39,7 @@ public class Report {
         return this.id;
     }
 
-    public int getIdCar(){
+    public Car getIdCar(){
         return this.car;
     }
 

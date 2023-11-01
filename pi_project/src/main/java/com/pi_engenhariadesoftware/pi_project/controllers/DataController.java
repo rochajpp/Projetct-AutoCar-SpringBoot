@@ -12,17 +12,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pi_engenhariadesoftware.pi_project.entities.Car;
 import com.pi_engenhariadesoftware.pi_project.entities.User;
+import com.pi_engenhariadesoftware.pi_project.entities.Report;
+
 import com.pi_engenhariadesoftware.pi_project.repositories.CarRepository;
 import com.pi_engenhariadesoftware.pi_project.repositories.UserRepository;
+import com.pi_engenhariadesoftware.pi_project.repositories.ReportRepository;
 
 @RestController
 public class DataController {
     private final CarRepository carRepository;
     private final UserRepository userRepository;
+    private final ReportRepository reportRepository;
 
-    public DataController(CarRepository carRepository, UserRepository userRepository) {
+    public DataController(CarRepository carRepository, UserRepository userRepository, ReportRepository reportRepository) {
         this.carRepository = carRepository;
         this.userRepository = userRepository;
+        this.reportRepository = reportRepository;
     }
 
 
@@ -39,8 +44,10 @@ public class DataController {
         Car car = carRepository.getReferenceById(id);
         car.setInterest(true);
         carRepository.save(car);
-
-
+        
+        Report report = new Report(car, name, phone);
+        reportRepository.save(report);
        
     }
 }
+
