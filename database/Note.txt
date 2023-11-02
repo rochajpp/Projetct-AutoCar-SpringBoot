@@ -1,3 +1,5 @@
+Português:
+
 Pasta de criação e configuração do banco de dados.
 
 
@@ -29,7 +31,10 @@ Pronto, conexão com o banco de dados efetuada.
 Depois da criação do banco de dados execute todas as linhas de CreateTable.sql e
 em seguida todas as linhas de InsertCarsBD.sql.
 
+OBS: caso a aplicação falhe, é necessário mudar o "spring.datasource.password", localizado no "application.properties", para a senha do banco de dados do seu computador.
 
+
+Inglês: 
 
 Database creation and configuration folder.
 

@@ -47,3 +47,6 @@ VALUES
 ("Entity", "XF", 795000.00, "The car is capable of reaching very high speeds. Its top speed is slightly lower than that of the Adder, but it has better acceleration than all other supercars. It also has very high traction due to its all-wheel-drive system and excellent weight distribution. From 0 to 100 km/h in 3.5 seconds, 6-speed transmission, V8 engine.", "/img/car12.png", 1, 2023, 2023, "2023-09-29");
 
 UPDATE car SET interest = 0 WHERE interest = 1;
+
+
+SHOW GRANTS FOR 'root'@'localhost';
