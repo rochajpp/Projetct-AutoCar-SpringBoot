@@ -32,8 +32,8 @@ public class DataController {
     }
 
 
-    @RequestMapping("/checkData")
-    public void checkData(@RequestParam("login") String login, @RequestParam("password") String pass){
+    @RequestMapping("/admin")
+    public ModelAndView checkData(@RequestParam("login") String login, @RequestParam("password") String pass){
         List<User> userList = userRepository.findAll();
         User user = null;
 
@@ -48,8 +48,11 @@ public class DataController {
 
         if(user != null){
             System.out.println("Logado com sucesso");
+            ModelAndView modelAndView = new ModelAndView("admin");
+            return modelAndView;
         }else{
             System.out.println("Credenciais incorretas");
+            return null;
         }
     }
 

@@ -1,0 +1,28 @@
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo{
+    width: 4rem;
+}
+
+ul{
+    display: flex;
+    gap: 1rem;
+}
+
+ul a{
+    cursor: pointer;
+}
+
+ul li{
+    list-style: none;
+    font-weight: bold;
+}
+
+text{
+    cursor: pointer;
+}
