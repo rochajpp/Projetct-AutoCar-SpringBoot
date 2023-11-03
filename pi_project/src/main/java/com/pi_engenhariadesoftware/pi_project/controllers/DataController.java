@@ -56,19 +56,6 @@ public class DataController {
         }
     }
 
-    @RequestMapping("/interest")
-    public ModelAndView interest(@RequestParam("id") Long id, @RequestParam("name") String name, @RequestParam("phone") String phone){
-        
-        // Adicionando true para interresse do carro
-        Car car = carRepository.getReferenceById(id);
-        car.setInterest(true);
-        carRepository.save(car);
-        
-        Report report = new Report(car, name, phone);
-        reportRepository.save(report);
-
-        ModelAndView modelAndView = new ModelAndView("interest");
-        return modelAndView;
-    }
+    
 }
 
