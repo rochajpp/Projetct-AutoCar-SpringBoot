@@ -66,3 +66,5 @@ There you go, the database connection has been established.
 
 After creating the database, execute all the lines in CreateTable.sql, and then execute all 
 the lines in InsertCarsBD.sql.
+
+NOTE: if the application fails, it is necessary to change the "spring.datasource.password", located in "application.properties", to the password for your computer's database.
