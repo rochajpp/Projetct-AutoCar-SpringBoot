@@ -29,7 +29,7 @@ public class LoginController {
    public String checkLogin(Model model, User userParam){
         User user = this.userRepository.login(userParam.getLogin(), userParam.getPassword());
         if(user != null){
-            return "redirect:/";
+            return "redirect:/admin";
         }
         model.addAttribute("error", "Credenciais inválidas");
         return "login";
