@@ -37,7 +37,7 @@ public class HomeController {
         return "home";
     }
 
-    
+
     @PostMapping("/interest")
     public ModelAndView interest(@RequestParam("id") Long id, @RequestParam("name") String name, @RequestParam("phone") String phone){
         
@@ -54,3 +54,4 @@ public class HomeController {
     }
     
 }
+

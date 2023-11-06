@@ -1,5 +1,7 @@
 package com.pi_engenhariadesoftware.pi_project.controllers;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,14 +31,21 @@ public class LoginController {
     }
 
    @PostMapping("/checkLogin")
-   public String checkLogin(Model model, User userParam, HttpServletResponse response){
+   public String checkLogin(Model model, User userParam, HttpServletResponse response) throws IOException{
         User user = this.userRepository.login(userParam.getLogin(), userParam.getPassword());
         if(user != null){
-            CookieService.setCookie(response, "userId", Integer.toString(user.getId()), 10);
-            return "redirect:/";
+            CookieService.setCookie(response, "userId", Integer.toString(user.getId()), 3600);
+            CookieService.setCookie(response,"userName", user.getName(), 3600 );
+            return "redirect:/admin";
         }
         model.addAttribute("error", "Credenciais inválidas");
         return "login";
+   }
+
+   @GetMapping("/exit")
+   public String exit(HttpServletResponse response) throws IOException{
+        CookieService.setCookie(response, "userId", "", 0);
+        return "redirect:/";
    }
     
 }
