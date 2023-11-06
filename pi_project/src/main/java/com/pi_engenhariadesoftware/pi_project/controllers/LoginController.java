@@ -32,8 +32,8 @@ public class LoginController {
    public String checkLogin(Model model, User userParam, HttpServletResponse response){
         User user = this.userRepository.login(userParam.getLogin(), userParam.getPassword());
         if(user != null){
-            CookieService.setCookie(response);
-            return "redirect:/admin";
+            CookieService.setCookie(response, "userId", Integer.toString(user.getId()), 10);
+            return "redirect:/";
         }
         model.addAttribute("error", "Credenciais inválidas");
         return "login";
