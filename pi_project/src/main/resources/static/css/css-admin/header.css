@@ -16,6 +16,7 @@ ul{
 
 ul a{
     cursor: pointer;
+    text-decoration: none;
 }
 
 ul li{

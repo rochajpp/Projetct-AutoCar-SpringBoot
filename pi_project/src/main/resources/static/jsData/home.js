@@ -1,5 +1,6 @@
 const url = window.location.href;
-fetch(url + "api/car/")
+
+fetch(url + "api/getCars")
     .then((response) => {
         return response.json();    
     })

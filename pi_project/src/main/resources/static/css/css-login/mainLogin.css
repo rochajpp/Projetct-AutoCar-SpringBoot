@@ -14,6 +14,7 @@ body{
 .main-container{
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(4px) brightness(40%);
@@ -75,4 +76,11 @@ button:hover{
 }
 a{
     color: white;
+}
+
+.alert{
+    color: white;
+    background-color: rgba(255, 71, 71, 0.544);
+    padding: 2rem 4rem;
+    border-radius: 1rem;
 }
