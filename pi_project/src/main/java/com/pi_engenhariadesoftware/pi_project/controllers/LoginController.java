@@ -39,6 +39,7 @@ public class LoginController {
             return "redirect:/admin";
         }
         model.addAttribute("error", "Credenciais inválidas");
+
         return "login";
    }
 
