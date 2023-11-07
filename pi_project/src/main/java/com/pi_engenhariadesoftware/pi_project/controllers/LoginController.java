@@ -1,6 +1,8 @@
 package com.pi_engenhariadesoftware.pi_project.controllers;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,7 +40,7 @@ public class LoginController {
             CookieService.setCookie(response,"userName", user.getName(), 3600 );
             return "redirect:/admin";
         }
-        model.addAttribute("error", "Credenciais inválidas");
+        model.addAttribute("error", "Invalid credentials");
 
         return "login";
    }
@@ -48,5 +50,28 @@ public class LoginController {
         CookieService.setCookie(response, "userId", "", 0);
         return "redirect:/";
    }
+
+
+
+   @GetMapping("/recover")
+   public String recover(){
+        return "resetPassword";
+   }
+
+   @PostMapping("/checkReset")
+   public String checkReset(String login, @RequestParam("birthdate") LocalDate birthDate, Model model){
     
+
+        User user = userRepository.reset(login, birthDate);
+
+        if(user != null){
+            System.out.println("Tudo certo!");
+            return "redirect:/";
+        } else{
+            System.out.println("Não deu não viunn");
+            model.addAttribute("error", "Invalid credentials");
+            return "resetPassword";
+        }
+
+   }
 }

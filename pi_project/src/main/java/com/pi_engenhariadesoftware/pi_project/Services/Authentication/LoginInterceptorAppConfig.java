@@ -12,6 +12,8 @@ public class LoginInterceptorAppConfig implements WebMvcConfigurer{
         registry.addInterceptor(new LoginInterceptor())
         .excludePathPatterns(
             "/",
+            "/checkReset",
+            "/recover",
             "/login",
             "/checkLogin",
             "/img/**",
