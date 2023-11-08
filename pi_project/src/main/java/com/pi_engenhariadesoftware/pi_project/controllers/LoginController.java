@@ -3,6 +3,7 @@ package com.pi_engenhariadesoftware.pi_project.controllers;
 import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -60,18 +61,18 @@ public class LoginController {
 
    @PostMapping("/checkReset")
    public String checkReset(String login, @RequestParam("birthdate") LocalDate birthDate, Model model){
-    
+
+        login = login.replaceAll("\\s", "");
 
         User user = userRepository.reset(login, birthDate);
 
         if(user != null){
             System.out.println("Tudo certo!");
             return "redirect:/";
-        } else{
-            System.out.println("Não deu não viunn");
-            model.addAttribute("error", "Invalid credentials");
-            return "resetPassword";
         }
+
+        model.addAttribute("error", "Invalid credentials");
+        return "resetPassword";
 
    }
 }
