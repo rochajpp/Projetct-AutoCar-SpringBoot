@@ -17,7 +17,7 @@ CREATE TABLE user(
     password VARCHAR(20) NOT NULL,
     name VARCHAR(100) NOT NULL,
     active BOOLEAN NOT NULL,
-    bithdate DATE NOT NULL,
+    birthdate DATE NOT NULL,
     registerdate DATE NOT NULL
 );
 
@@ -29,4 +29,3 @@ CREATE TABLE report(
     registerdate DATE NOT NULL,
     FOREIGN KEY (idcar) REFERENCES car (id)
 );
-
