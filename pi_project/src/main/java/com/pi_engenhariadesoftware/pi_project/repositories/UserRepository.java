@@ -15,4 +15,7 @@ public interface UserRepository extends JpaRepository<User, Long>{
 
     @Query(value="SELECT * FROM user WHERE login = :login AND birthdate = :birthdate", nativeQuery = true)
     public User reset(String login, LocalDate birthdate);
+
+    @Query(value="SELECT * FROM user WHERE id = :idUser", nativeQuery = true)
+    public User getUser(int idUser);
 }

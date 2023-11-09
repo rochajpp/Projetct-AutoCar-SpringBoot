@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,6 +50,7 @@ public class LoginController {
    @GetMapping("/exit")
    public String exit(HttpServletResponse response) throws IOException{
         CookieService.setCookie(response, "userId", "", 0);
+        CookieService.setCookie(response, "userName", "", 0);
         return "redirect:/";
    }
 
@@ -56,11 +58,11 @@ public class LoginController {
 
    @GetMapping("/recover")
    public String recover(){
-        return "resetPassword";
+        return "recover";
    }
 
    @PostMapping("/checkReset")
-   public String checkReset(String login, @RequestParam("birthdate") LocalDate birthDate, Model model){
+   public String checkReset(String login, @RequestParam("birthdate") LocalDate birthDate, Model model, HttpServletResponse response) throws IOException{
 
         login = login.replaceAll("\\s", "");
 
@@ -68,11 +70,45 @@ public class LoginController {
 
         if(user != null){
             System.out.println("Tudo certo!");
-            return "redirect:/";
+            model.addAttribute("id", user.getId());
+            CookieService.setCookie(response, "idUser", Integer.toString((user.getId())), 10);
+            return "redirect:/setPassForm";
         }
 
         model.addAttribute("error", "Invalid credentials");
-        return "resetPassword";
+        return "recover";
+   }
+
+   @GetMapping("/setPassForm")
+   public String passForm(){
+         return "resetPassForm";
+   }
+
+   @PostMapping("/setPass")
+   public String setPass(String pass, String passConfirm, HttpServletRequest request, HttpServletResponse response, Model model) throws Exception{
+     String idUser = CookieService.getCookie(request, "idUser");
+
+     if(idUser == null){
+          model.addAttribute("overflow", "Time exceeded");
+          return "recover";
+     }
+
+     if(!pass.equals(passConfirm)){
+          model.addAttribute("passNotEquals", "The passwords do not match");
+          return "resetPassForm";
+     }
+
+     int id = Integer.parseInt(idUser);
+
+     User user = userRepository.getUser(id);
+
+     user.setPassword(pass);
+
+     userRepository.save(user);
+
+     model.addAttribute("sucess", "The password was changed sucessfully");
+     CookieService.setCookie(response, "idUser", "", 0);
+     return "redirect:/login";
 
    }
 }

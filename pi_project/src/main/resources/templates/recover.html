@@ -17,6 +17,7 @@
             <a href="/login"><button type="button">Back</button></a>
         </form>
         <div th:if="${error != null}" th:text="${error}" class="alert"></div>
+        <div th:if="${overflow != null}" th:text="${overflow}" class="alert"></div>
     </div>
 </body>
 </html>
