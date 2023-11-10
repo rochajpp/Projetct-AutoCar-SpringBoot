@@ -9,7 +9,7 @@
     <link rel="icon" href="/img/icon.png">
     <title>Admin | AutoCar</title>
 </head>
-<body>
+<body onload="start()">
     <header>
         <div class="header-container">
             <img class="logo" src="/img/icon.png">
@@ -30,7 +30,23 @@
             <section class="cars-container">
                 <h1>Cars</h1>
                 <div class="cars">
-                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Brand</th>
+                                <th>Model</th>
+                                <th>Interest</th>
+                                <th>Manufacture Year</th>
+                                <th>Model Year</th>
+                                <th>Register Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="carsBody">
+                        
+                        </tbody>
+                    </table>
                 </div>
                 <a><button>New car</button></a>
             </section>
@@ -48,7 +64,7 @@
                             </tr>
                         </thead>
 
-                        <tbody class="tbody">
+                        <tbody class="usersBody">
                             
                         </tbody>
                     </table>
