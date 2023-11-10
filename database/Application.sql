@@ -7,6 +7,7 @@ UPDATE car SET interest = 0 WHERE interest = 1;
 DROP TABLE car;
 
 SELECT * FROM car;
+DESCRIBE car;
 
 SHOW TABLES;
 

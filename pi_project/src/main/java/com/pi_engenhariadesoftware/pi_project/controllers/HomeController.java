@@ -43,7 +43,7 @@ public class HomeController {
         
         // Adicionando true para interresse do carro
         Car car = carRepository.getReferenceById(id);
-        car.setInterest(true);
+        car.setInterest();
         carRepository.save(car);
         
         Report report = new Report(car, name, phone);

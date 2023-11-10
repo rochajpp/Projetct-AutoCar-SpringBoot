@@ -133,8 +133,8 @@ public class Car {
         return this.interest;
     }
 
-    public void setInterest(Boolean interest) {
-        this.interest = interest;
+    public void setInterest() {
+        this.interest = !this.interest;
     }
 
     
