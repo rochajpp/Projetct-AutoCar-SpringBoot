@@ -21,4 +21,3 @@ DESCRIBE user;
 INSERT INTO user (login, password, name, active, birthdate, registerdate) VALUES ("admin2", "admin2020", "Admin", 0, "2022-02-02", "2022-02-02");
 
 DELETE FROM report;
-

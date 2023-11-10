@@ -1,0 +1,93 @@
+#contacts{
+    display: flex;
+    justify-content: center;
+}
+
+.form-container{
+    margin-top: 4%;
+    margin-bottom: 4%;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    background-color: rgba(245, 245, 245, 0.7);
+    border-radius: 15px;
+}
+  
+  .form-container h1{
+    margin-bottom: 0.3rem;
+    color: black;
+  }
+  
+  .form-container input, textarea{
+    background-color: #4E4E66;
+    padding: 0.8rem;
+    border: 1px solid transparent;
+    font-size: 1.5rem;
+    transition: border-color, box-shadow 0.2s;
+  }
+  
+  .form-container textarea{
+    min-height: 10rem;
+    resize: none;
+  }
+  
+  .form-container button{
+    margin-bottom: 4%;
+    display: block;
+    padding: 1rem;
+    background-color: #fff;
+    color: black;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .form-container button:hover{
+    background-color: darkslateblue;
+    transition: 0.3s;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .form-contact{
+    margin-right: 3rem;
+  }
+  
+  .form-contact h2{
+    margin-bottom: 1rem;
+  }
+  
+  .form-group{
+    width: 50%;
+    height: 32rem;
+  }
+  
+  
+  .form-group label,
+  .form-group input,
+  .form-group textarea,
+  .form-group button{
+      width: 100%;
+      height: 4rem;
+  }
+  
+  .form-group input:hover,
+  .form-group input:focus,
+  .form-group textarea:hover,
+  .form-group textarea:focus{
+      outline: none;
+      border-color: #fff;
+      box-shadow: 0 0 0 3px #fff;
+  }
+  
+  .grid-container input,
+  .grid-container textarea,
+  .grid-container button{
+    border-radius: 5px;
+  }
+  
+  .grid-container{
+    margin-bottom: 2rem;
+  }

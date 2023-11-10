@@ -9,6 +9,9 @@
     <link rel="stylesheet" type="text/css" href="/css/css-home/media.css">
     <link rel="stylesheet" type="text/css" href="/css/css-home/about.css">
     <link rel="stylesheet" type="text/css" href="/css/css-home/cars.css">
+    <link rel="stylesheet" type="text/css" href="/css/css-contact/contact.css">
+    <link rel="stylesheet" type="text/css" href="/css/css-footer/footer.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="icon" type="image/png" href="/img/icon.png">
     <title>Home | AutoCar</title>
 </head>
@@ -83,8 +86,74 @@
         
     </div>
 
-    <footer id="contacts">
+    <section id="contacts">
+        <div class="form-container">
+        <form action="https://formsubmit.co/andrefonteneledev@gmail.com" method="POST">
+            <h1>Nome</h1>
+            <div className="grid-container">
+            <input type="text" name="name" placeholder="Digite seu nome" id="name" required>
+            </input>
+            </div>
+            
+            
+            <h1>E-mail</h1>
+            <div className='grid-container'>
+            <input type="email" name="email" placeholder="Digite seu e-mail" id="email" required>
+            </input>
+            </div>
+      
+            
+            <h1>Deixe uma mensagem</h1>
+            <div className='grid-container'>
+            <textarea name="message" placeholder="Digite sua mensagem" id="message"></textarea>
+            <input type="hidden" name="_captcha" value="false"></input>
+            </div>
+      
+            
+            <div className="grid-container">
+            <input 
+            type="hidden" 
+            name="_next" 
+            value="https://portfolio-andredfontenele.vercel.app/"></input>
+            <button type="submit">Enviar</button>
+            </div>
+          </form>
+        </div>
+    </section>
+
+    <footer id="footer">
         <div class="footer-container">
+            <p>&copy; Autocar</p>
+            <p>Todos os direitos reservados.</p>
+            <p>Desenvolvido por: </p>
+
+            <div class="footer-integrante">
+                <p>André Luiz Duarte Fontenele</p>
+                <a href="https://github.com/andredfontenele" target="_blank" rel="noreferrer">
+                    <i class="uil uil-github-alt"></i>
+                </a>
+            </div>
+            
+            <div class="footer-integrante">
+                <p>Guilherme Soares Madeiro</p>
+                <a href="https://github.com/Guilherme-Soar6" target="_blank" rel="noreferrer">
+                    <i class="uil uil-github-alt"></i>
+                </a>
+            </div>
+            
+            <div class="footer-integrante">
+                <p>João Paulo Medeiros Rocha</p>
+                <a href="https://github.com/rochajpp" target="_blank" rel="noreferrer">
+                    <i class="uil uil-github-alt"></i>
+                </a>
+            </div>
+            
+            <div class="footer-integrante">
+                <p>Lucas Venício Angelim Olegário</p>
+                <a href="https://github.com/LucasVenicioDEV" target="_blank" rel="noreferrer">
+                    <i class="uil uil-github-alt"></i>
+                </a>
+            </div>
             
         </div>
     </footer>
