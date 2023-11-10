@@ -69,7 +69,6 @@ public class LoginController {
         User user = userRepository.reset(login, birthDate);
 
         if(user != null){
-            System.out.println("Tudo certo!");
             model.addAttribute("id", user.getId());
             CookieService.setCookie(response, "idUser", Integer.toString((user.getId())), 60);
             return "redirect:/setPassForm";
@@ -108,7 +107,7 @@ public class LoginController {
 
      model.addAttribute("sucess", "The password was changed sucessfully");
      CookieService.setCookie(response, "idUser", "", 0);
-     return "redirect:/login";
+     return "login";
 
    }
 }

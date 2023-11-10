@@ -13,7 +13,7 @@
             <input name="pass" placeholder="Type a new password" required>
             <input name="passConfirm" placeholder="Confirm your new password" required>
             <button>Send</button>
-            <a href="/recover"><button>Back</button></a>
+            <a href="/recover"><button type="button">Back</button></a>
         </form>
         <div th:if="${passNotEquals != null}" th:text="${passNotEquals}" class="alert"></div>
     </div>
