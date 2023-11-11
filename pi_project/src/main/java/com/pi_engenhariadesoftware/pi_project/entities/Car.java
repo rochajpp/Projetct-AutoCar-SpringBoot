@@ -55,7 +55,7 @@ public class Car {
 
 
     @Column(name = "interest", nullable = false)
-    private Boolean interest;
+    private Boolean interest = false;
 
 
 

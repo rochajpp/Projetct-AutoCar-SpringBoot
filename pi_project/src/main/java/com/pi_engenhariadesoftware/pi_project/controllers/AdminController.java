@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -127,6 +128,48 @@ public class AdminController {
         }    
         carRepository.save(carUp);
         return "redirect:/admin";
+    }
+
+    @GetMapping("/addCar")
+    public String addCar(){
+        return "addCar";
+    }
+
+    @PostMapping("/saveCar")
+    public String saveCar(Car car, @RequestParam("file") MultipartFile file, Model model){
+        System.out.println(car.getBrand());
+         if(!file.isEmpty()){
+            String fileName = file.getOriginalFilename();        
+            String dirProject = System.getProperty("user.dir");
+
+            try{
+                String dirUploadImage = dirProject + "\\pi_project\\src\\main\\resources\\static\\img";
+                File dir = new File(dirUploadImage);
+                if(!dir.exists()){
+                    dir.mkdirs();
+                }
+
+                File serverFile = new File(dir.getAbsolutePath() + File.separator + fileName);
+
+                BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
+
+                stream.write(file.getBytes());
+                stream.close();            
+
+            } catch(Exception e){   
+                model.addAttribute("error", "Image error!");  
+                return "/addCar";     
+            }
+
+            car.setImage("/img/" + fileName);
+            car.setRegisterDate(LocalDate.now());
+
+            carRepository.save(car);
+
+            return "redirect:/admin";
+        }
+
+        return "/addCar";
     }
     
 }
