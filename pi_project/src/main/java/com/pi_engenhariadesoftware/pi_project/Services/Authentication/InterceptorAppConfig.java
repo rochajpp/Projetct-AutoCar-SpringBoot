@@ -15,5 +15,8 @@ public class InterceptorAppConfig implements WebMvcConfigurer{
         
         registry.addInterceptor(new ResetPassInterceptor())
         .addPathPatterns("/setPassForm");
+
+        registry.addInterceptor(new AdminInterceptor())
+        .addPathPatterns("/setCar", "/rmCar", "/backCar");
     }
 }

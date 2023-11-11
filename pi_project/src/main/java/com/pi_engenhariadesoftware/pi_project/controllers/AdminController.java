@@ -122,7 +122,7 @@ public class AdminController {
 
             } catch(Exception e){   
                 model.addAttribute("error", "Image error!");  
-                return "setCar?idCar" + car.getID();
+                return "setCar?idCar=" + car.getID();
             }         
         }    
         carRepository.save(carUp);
