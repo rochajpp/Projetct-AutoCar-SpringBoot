@@ -137,7 +137,7 @@ public class AdminController {
 
     @PostMapping("/saveCar")
     public String saveCar(Car car, @RequestParam("file") MultipartFile file, Model model){
-        System.out.println(car.getBrand());
+        System.out.println(car.getManufactureYear());
          if(!file.isEmpty()){
             String fileName = file.getOriginalFilename();        
             String dirProject = System.getProperty("user.dir");

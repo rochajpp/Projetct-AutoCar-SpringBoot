@@ -17,9 +17,17 @@ SELECT * FROM report;
 
 SELECT * FROM user;
 
+DELETE FROM report;
+
+DESCRIBE report;
+
+DROP TABLE report;
+
 DESCRIBE user;
 
-INSERT INTO user (login, password, name, active, birthdate, registerdate) VALUES ("admin2", "admin2020", "Admin", 0, "2022-02-02", "2022-02-02");
+UPDATE user SET active = 1 WHERE login = "jotap";
+
+INSERT INTO user (login, password, name, active, birthdate, registerdate) VALUES ("jotap", "joao", "João", 0, "2003-07-25", "2023-11-12");
 
 DELETE FROM report;
 

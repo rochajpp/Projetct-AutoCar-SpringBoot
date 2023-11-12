@@ -26,6 +26,5 @@ CREATE TABLE report(
     idcar INT NOT NULL,
     nameclient VARCHAR(100) NOT NULL,
     phoneclient VARCHAR(20) NOT NULL,
-    registerdate DATE NOT NULL,
-    FOREIGN KEY (idcar) REFERENCES car (id)
+    registerdate DATE NOT NULL
 );
