@@ -209,5 +209,35 @@ public class AdminController {
     
         return "redirect:/admin";
     }
+
+    @GetMapping("/addUser")
+    public String addUser(){
+        return "addUser";
+    }
+
+    @PostMapping("/saveUser")
+    public String saveUser(User userParam, Model model){
+        User existUser = userRepository.checkLogin(userParam.getLogin());
+
+        if(existUser != null){
+            model.addAttribute("error", "Login already exists!");
+            return "addUser";
+        }
+
+        userParam.setActive(true);
+        userParam.setRegisterDate(LocalDate.now());
+
+        userRepository.save(userParam);
+
+        return "redirect:/admin";
+    }
+
+    @GetMapping("/removeUser")
+    public String removeUser(Long id){
+        
+        userRepository.deleteById(id);
+
+        return "redirect:/admin";
+    }
     
 }

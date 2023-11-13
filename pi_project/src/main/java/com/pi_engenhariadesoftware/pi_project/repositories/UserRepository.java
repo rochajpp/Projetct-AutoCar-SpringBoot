@@ -18,4 +18,7 @@ public interface UserRepository extends JpaRepository<User, Long>{
 
     @Query(value="SELECT * FROM user WHERE id = :idUser", nativeQuery = true)
     public User getUser(int idUser);
+
+    @Query(value="SELECT * FROM user WHERE login = :login", nativeQuery = true)
+    public User checkLogin(String login);
 }

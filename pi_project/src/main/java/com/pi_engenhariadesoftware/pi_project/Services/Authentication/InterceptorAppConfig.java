@@ -11,7 +11,7 @@ public class InterceptorAppConfig implements WebMvcConfigurer{
     @Override
     public void addInterceptors(InterceptorRegistry registry){
         registry.addInterceptor(new LoginInterceptor())
-        .addPathPatterns("/admin", "/setCar", "/rmCar", "/backCar", "/addCar");
+        .addPathPatterns("/admin", "/setCar", "/rmCar", "/backCar", "/addCar", "/addUser", "/alterUser", "/removeUser");
         
         registry.addInterceptor(new ResetPassInterceptor())
         .addPathPatterns("/setPassForm");

@@ -122,6 +122,9 @@ function listUsers(){
                     const active = document.createElement("td");
                     active.appendChild(fieldset);
 
+                    const registerDate = document.createElement("td");
+                    registerDate.innerHTML = users[i].registerDate;
+
                     const actions = document.createElement("td");
                     actions.style.display = "flex";
                     actions.style.gap = "2rem";
@@ -143,6 +146,7 @@ function listUsers(){
                     user.appendChild(name);
                     user.appendChild(username);
                     user.appendChild(active);
+                    user.appendChild(registerDate);
                     user.appendChild(actions);
 
                     tbody.appendChild(user);
