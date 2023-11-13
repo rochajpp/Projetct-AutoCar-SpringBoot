@@ -36,6 +36,11 @@ public class LoginController {
    @PostMapping("/checkLogin")
    public String checkLogin(Model model, User userParam, HttpServletResponse response) throws IOException{
         User user = this.userRepository.login(userParam.getLogin(), userParam.getPassword());
+        if(!user.getActive()){
+          model.addAttribute("disabled", "User disabled, contact your administrator!");
+          return "login";
+        }
+
         if(user != null){
             CookieService.setCookie(response, "userId", Integer.toString(user.getId()), 3600);
             CookieService.setCookie(response,"userName", user.getName(), 3600 );

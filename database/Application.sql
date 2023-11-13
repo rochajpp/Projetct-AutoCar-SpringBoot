@@ -25,7 +25,6 @@ DROP TABLE report;
 
 DESCRIBE user;
 
-UPDATE user SET active = 1 WHERE login = "jotap";
 
 INSERT INTO user (login, password, name, active, birthdate, registerdate) VALUES ("jotap", "joao", "João", 0, "2003-07-25", "2023-11-12");
 

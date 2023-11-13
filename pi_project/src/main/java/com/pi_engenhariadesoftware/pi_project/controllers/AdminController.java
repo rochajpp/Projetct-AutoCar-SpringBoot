@@ -171,5 +171,43 @@ public class AdminController {
 
         return "/addCar";
     }
+
+    @GetMapping("/alterUser")
+    public String alterUser(String id, Model model){
+        User user = userRepository.getReferenceById(Long.parseLong(id));
+        String active = null;
+
+        if(user.getActive()){
+            active = "true";
+        }
+
+        model.addAttribute("id", id);
+        model.addAttribute("login", user.getLogin());
+        model.addAttribute("name", user.getName());
+        model.addAttribute("active", user.getActive());
+        model.addAttribute("birthdate", user.getBirthDate());
+        model.addAttribute("registerdate", user.getRegisterDate());
+
+        return "alterUser";
+    }
+
+    @PostMapping("/setUser")
+    public String setUser(User user, @RequestParam("id") String id, Model model){
+        User userUp = userRepository.getReferenceById(Long.parseLong(id));
+
+        userUp.setLogin(user.getLogin());
+        userUp.setName(user.getName());;
+        if(user.getActive() != null){
+            userUp.setActive(true);
+        }else{
+            userUp.setActive(false);
+        }
+        userUp.setBirthDate(user.getBirthDate());
+        userUp.setRegisterDate(user.getBirthDate());
+
+        userRepository.save(userUp);
+    
+        return "redirect:/admin";
+    }
     
 }

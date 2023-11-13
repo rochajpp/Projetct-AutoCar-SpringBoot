@@ -100,6 +100,12 @@ public class User {
         this.registerDate = registerDate;
     }
 
+    @Override
+    public String toString() {
+        return "User [ID=" + ID + ", login=" + login + ", password=" + password + ", name=" + name + ", active="
+                + active + ", birthDate=" + birthDate + ", registerDate=" + registerDate + "]";
+    }
+
 
 
 

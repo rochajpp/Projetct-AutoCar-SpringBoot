@@ -27,6 +27,7 @@
             <a href="/">Back</a>
         </form>
         <div th:if="${error != null}" th:text="${error}" class="alert"></div>
+        <div th:if="${disabled != null}" th:text="${disabled}" class="alert"></div>
         <div 
             style=
             "color: white; 
