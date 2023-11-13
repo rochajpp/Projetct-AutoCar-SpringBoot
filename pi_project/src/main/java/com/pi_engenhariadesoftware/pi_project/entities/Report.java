@@ -14,9 +14,8 @@ public class Report {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne
-    @JoinColumn(name = "idcar", nullable = false)
-    private Car car;
+    @Column(name = "idcar", nullable = false)
+    private Long car;
 
     @Column(name = "nameclient", length = 100, nullable = false)
     private String nameClient;
@@ -28,7 +27,11 @@ public class Report {
     @Temporal(TemporalType.DATE)
     private LocalDate registerDate;
 
-    public Report(Car car, String nameClient, String phoneClient){
+    public Report(){
+        
+    }
+
+    public Report(Long car, String nameClient, String phoneClient){
         this.car = car;
         this.nameClient = nameClient;
         this.phoneClient = phoneClient;
@@ -39,7 +42,7 @@ public class Report {
         return this.id;
     }
 
-    public Car getIdCar(){
+    public Long getIdCar(){
         return this.car;
     }
 

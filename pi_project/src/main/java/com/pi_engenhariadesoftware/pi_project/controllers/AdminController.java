@@ -8,6 +8,9 @@ import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,15 +24,25 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+
 import com.pi_engenhariadesoftware.pi_project.Services.CookieService;
 import com.pi_engenhariadesoftware.pi_project.entities.Car;
+import com.pi_engenhariadesoftware.pi_project.entities.Report;
 import com.pi_engenhariadesoftware.pi_project.entities.User;
 import com.pi_engenhariadesoftware.pi_project.repositories.CarRepository;
+import com.pi_engenhariadesoftware.pi_project.repositories.ReportRepository;
 import com.pi_engenhariadesoftware.pi_project.repositories.UserRepository;
 
 import org.springframework.ui.Model;
 
 import jakarta.persistence.criteria.Path;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -41,6 +54,9 @@ public class AdminController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private ReportRepository reportRepository;
 
 
     
@@ -239,5 +255,43 @@ public class AdminController {
 
         return "redirect:/admin";
     }
+
+    @GetMapping("/report")
+    protected void repor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Document document = new Document();
+		try {
+			response.setContentType("apllication/pdf");
+			response.addHeader("Content-Disposition", "inline; filename=" + "report.pdf");
+			PdfWriter.getInstance(document, response.getOutputStream());
+			document.open();
+			document.add(new Paragraph("Interest List:"));
+			document.add(new Paragraph(" "));
+			PdfPTable table = new PdfPTable(5);
+            PdfPCell col = new PdfPCell(new Paragraph("Id Car"));
+			PdfPCell col1 = new PdfPCell(new Paragraph("Car"));
+			PdfPCell col2 = new PdfPCell(new Paragraph("Client"));
+			PdfPCell col3 = new PdfPCell(new Paragraph("Phone"));
+            PdfPCell col4 = new PdfPCell(new Paragraph("Date"));
+            table.addCell(col);
+			table.addCell(col1);
+			table.addCell(col2);
+			table.addCell(col3);
+            table.addCell(col4);
+			List<Report> list = reportRepository.findAll();
+       
+			for (int i = 0; i < list.size(); i++) {       
+                table.addCell(Long.toString(list.get(i).getIdCar()));
+				table.addCell(carRepository.getReferenceById(list.get(i).getIdCar()).getBrand() + " - " + carRepository.getReferenceById(list.get(i).getIdCar()).getModel());
+				table.addCell(list.get(i).getNameClient());
+				table.addCell(list.get(i).getPhoneClient());
+                table.addCell((list.get(i).getRegisterDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))));
+			}
+			document.add(table);
+			document.close();
+		} catch (Exception e) {
+			System.out.println(e);
+			document.close();
+		}
+	}
     
 }

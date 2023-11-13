@@ -46,7 +46,7 @@ public class HomeController {
         car.setInterest();
         carRepository.save(car);
         
-        Report report = new Report(car, name, phone);
+        Report report = new Report(Long.parseLong(Integer.toString(car.getID())), name, phone);
         reportRepository.save(report);
 
         ModelAndView modelAndView = new ModelAndView("interest");

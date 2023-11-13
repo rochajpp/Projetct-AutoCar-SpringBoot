@@ -21,6 +21,7 @@ CREATE TABLE user(
     registerdate DATE NOT NULL
 );
 
+
 CREATE TABLE report(
     id INT PRIMARY KEY AUTO_INCREMENT,
     idcar INT NOT NULL,
